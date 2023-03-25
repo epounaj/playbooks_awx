@@ -1,0 +1,12 @@
+- name: Get disk space
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Run df command
+      shell: df -h
+      register: df_output
+
+    - name: Print disk space
+      debug:
+        var: df_output.stdout_lines
