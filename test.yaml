@@ -3,7 +3,7 @@
   
   tasks:
     - name: Run df command
-      shell: df -h
+      shell: date
       register: df_output
 
     - name: Print disk space
