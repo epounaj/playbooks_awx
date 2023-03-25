@@ -1,0 +1,11 @@
+- name: Get current time
+  hosts: all
+
+  tasks:
+    - name: Run date command
+      shell: date
+      register: date_output
+
+    - name: Print current time
+      debug:
+        var: date_output.stdout_lines
