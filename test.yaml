@@ -1,11 +1,11 @@
 - name: Get disk space
   hosts: all
-  
+
   tasks:
     - name: Run df command
-      shell: date
+      ansible.builtin.command: df -h
       register: df_output
 
     - name: Print disk space
-      debug:
+      ansible.builtin.debug:
         var: df_output.stdout_lines
