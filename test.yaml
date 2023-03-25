@@ -1,7 +1,6 @@
 - name: Get disk space
   hosts: all
-  become: true
-
+  
   tasks:
     - name: Run df command
       shell: df -h
